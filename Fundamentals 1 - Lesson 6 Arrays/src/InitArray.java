@@ -3,26 +3,30 @@ public class InitArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int array1[][] = {{1,2,3} , {4,5,6}};
-		int array2[][] = {{1,2} , {3}, {4,5,6}};
-		
-		System.out.println("Values in array1 by row are");
-		outputArray(array1);
-		
-		System.out.println("\nValues in array2 by row are");
-		outputArray(array2);
-	}
-	
-	public static void outputArray(int array[][]) {
-		
-		for (int row = 0; row < array.length; row++)
+		if(args.length != 3)
 		{
-			for (int column = 0; column < array[row].length; column++)
+			System.out.println("Error: Please re-enter the entire command, inlcuding\n" +
+								"an array size, initial value and increment.");	
+		}
+		else
+		{
+			int arrayLength = Integer.parseInt(args[0]);
+			int array[] = new int [arrayLength];
+			
+			int initialValue = Integer.parseInt(args[1]);
+			int increment = Integer.parseInt(args[2]);
+			
+			for(int counter = 0; counter < array.length; counter++)
 			{
-				System.out.printf("%d ", array[row][column]);
+				array[counter] = initialValue + increment * counter;
 			}
 			
-			System.out.println();
+			System.out.printf("%s%8s\n", "Index", "Value");
+			
+			for(int counter = 0; counter < array.length; counter++)
+			{
+				System.out.printf("%5d%8d\n", counter, array[counter]);
+			}
 		}
 	}
 }
