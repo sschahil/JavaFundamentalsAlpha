@@ -16,15 +16,14 @@ public class SalariedEmployee extends Employee{
 		return weeklySalary;
 	}
 	
-	@Override //abstract keyword has been removed
-	public double earnings() {
+	@Override
+	public double getPaymentAmount() {
 		return getWeeklySalary();
 	}
-
+	
 	public String toString() {
 		
 		return String.format("salaried employee: %s\n%s: $%,.2f ", 
 				super.toString(), "weekly salary", getWeeklySalary() );
 	}
-	
 }
