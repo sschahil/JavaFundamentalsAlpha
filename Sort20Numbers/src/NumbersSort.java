@@ -49,7 +49,7 @@ public class NumbersSort {
 		int temp = 0;
 		int index = 0;
 		
-		while(index < 19)
+		while(index < list.size() - 1)
 		{
 			if(list.get(index).equals(list.get(index + 1)))
 			{
