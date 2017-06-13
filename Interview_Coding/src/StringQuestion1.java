@@ -1,3 +1,5 @@
+//Write code to check a String is palindrome or not?
+
 import java.util.*;
 
 public class StringQuestion1 {
