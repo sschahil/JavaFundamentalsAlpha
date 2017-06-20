@@ -12,8 +12,7 @@ public class UsingExceptions {
 		{
 			System.err.println("Exception handled in main");
 		}
-		
-		doesNotThrowException();
+	
 	}
 	
 	public static void throwException() throws Exception {
@@ -24,34 +23,14 @@ public class UsingExceptions {
 			throw new Exception();
 		}
 		
-		catch(Exception exception)
+		catch(RuntimeException runtimeException)
 		{
 			System.err.println("Exception handled in method throwException");
-			throw exception;
 		}
 		
 		finally
 		{
-			System.err.println("Finally executed in throwException");
+			System.err.println("Finally is always executed");
 		}
 	}
-	
-	public static void doesNotThrowException(){
-		
-		try 
-		{
-			System.out.println("Method doesNotThrowException");
-		}
-		
-		catch (Exception exception)
-		{
-			System.err.println(exception);
-		}
-		
-		finally
-		{
-			System.err.println("Finally executed in doesNotThrowException");
-		}
-	}
-	
 }
